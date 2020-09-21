@@ -1,0 +1,56 @@
+{
+  "GlobalConfiguration": {
+    // 网关全局配置	
+    "BaseUrl": null, ///网关对外地址
+    "DownstreamScheme": "https", // 协议	
+    "LoadBalancerOptions": { // 负载均衡的算法（这里使用最小连接数）	
+      "Type": "LeastConnection"
+    },
+    "ReRoutesCaseSensitive": false, // 路由大小写敏感设置
+    "ServiceDiscoveryProvider": { // 服务发现的配置	
+      "Host": "172.16.0.10",
+      "Port": 8500,
+      "ConfigurationKey": "Consul"
+    },
+    "UpstreamHttpMethod": [ "GET", "POST", "DELETE", "PUT" ], // 支持请求方法
+    "UseServiceDiscovery": true //使用服务发现
+  },
+  "ReRoutes": [
+    {
+      "UpstreamPathTemplate": "/TimingSchedulingService/api/{url}",
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http", // 协议	
+      "ServiceName": "TimingSchedulingService",
+      "RateLimitOptions": {
+        "ClientWhitelist": [ "127.0.0.1" ], //白名单
+        "EnableRateLimiting": true, //是否启用限流
+        "Period": "5s", //速率限制
+        "PeriodTimespan": 10, //一定秒数后重试
+        "Limit": 10000 //定义的时间内可以发出的最大请求数
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3, //多少个错误熔断
+        "DurationOfBreak": 10000, //断路器跳闸后将保持断开状态多少毫秒
+        "TimeoutValue": 5000 //请求超时多久跳闸
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/WeChatAppletService/api/{url}",
+      "DownstreamPathTemplate": "/api/{url}",
+      "DownstreamScheme": "http", // 协议	
+      "ServiceName": "WeChatAppletService",
+      "RateLimitOptions": {
+        "ClientWhitelist": [ "127.0.0.1" ], //白名单
+        "EnableRateLimiting": true, //是否启用限流
+        "Period": "5s", //速率限制
+        "PeriodTimespan": 10, //一定秒数后重试
+        "Limit": 10000 //定义的时间内可以发出的最大请求数
+      },
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 3, //多少个错误熔断
+        "DurationOfBreak": 10000, //断路器跳闸后将保持断开状态多少毫秒
+        "TimeoutValue": 5000 //请求超时多久跳闸
+      }
+    }
+  ]
+}

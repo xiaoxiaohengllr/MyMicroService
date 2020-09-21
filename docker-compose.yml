@@ -1,0 +1,41 @@
+version: '3'
+services:
+    microservice.gateway.apigateway:
+        container_name: microservice.gateway.apigateway
+        build:
+            context: .
+            dockerfile: ./MyMicroService.Gateway.ApiGateway/Dockerfile
+        ports:
+            - '80:80'
+            - '443:443'
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+            - ASPNETCORE_URLS=https://+443;http://+80
+            - ASPNETCORE_Kestrel__Certificates__Default__Password=w8l1520082m49
+            - ASPNETCORE_Kestrel__Certificates__Default__Path=./MyMicroService.Gateway.ApiGateway/www.xiaoxiaoheng.cn.pfx
+    
+    microservice.service.timingschedulingservice:
+        container_name:  microservice.service.timingschedulingservice
+        build:
+            context: .
+            dockerfile: ./MyMicroService.Service.TimingSchedulingService/Dockerfile
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+            - IP=172.16.0.10
+            - Port=5210
+            - ConsulUrl=http://172.16.0.10:8500/
+        ports:
+            - '5210:80'
+    
+    microservice.service.wechatappletservice:
+        container_name:  microservice.service.wechatappletservice
+        build:
+            context: .
+            dockerfile: ./MyMicroService.Service.WeChatAppletService/Dockerfile
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Production
+            - IP=172.16.0.10
+            - Port=5211
+            - ConsulUrl=http://172.16.0.10:8500/
+        ports:
+            - '5211:80'

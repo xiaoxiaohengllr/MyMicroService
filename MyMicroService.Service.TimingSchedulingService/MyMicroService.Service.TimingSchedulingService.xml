@@ -1,0 +1,734 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyMicroService.Service.TimingSchedulingService</name>
+    </assembly>
+    <members>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_GetEntityAsync_Response">
+            <summary>
+            MissionPlan_GetEntityAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_GetListAsync_Response">
+            <summary>
+            MissionPlan_GetListAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_GetPageListAsync_Response">
+            <summary>
+            MissionPlan_GetPageListAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request">
+            <summary>
+            MissionPlan_InsertAsync_Request请求对象
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.Name">
+            <summary>
+            计划名称
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.Group">
+            <summary>
+            计划分组
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.Cron">
+            <summary>
+            cron表达式
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.Describe">
+            <summary>
+            计划描述
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.State">
+            <summary>
+            计划状态
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.OperationTypeID">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request.OperationData">
+            <summary>
+            操作数据
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_UpdateAsync_Request">
+            <summary>
+            MissionPlan_UpdateAsync_Request请求对象
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_UpdateAsync_Request.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_GetEntityAsync_Response">
+            <summary>
+            OperationType_GetEntityAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_GetListAsync_Response">
+            <summary>
+            OperationType_GetListAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_GetPageListAsync_Response">
+            <summary>
+            OperationType_GetPageListAsync_Response返回对象
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_InsertAsync_Request">
+            <summary>
+            OperationType_InsertAsync_Request请求对象
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_InsertAsync_Request.Name">
+            <summary>
+            操作类型名称
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_InsertAsync_Request.DataValidationMethod">
+            <summary>
+            数据验证方法
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_InsertAsync_Request.SchedulingExecutionMethod">
+            <summary>
+            调度执行方法
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_UpdateAsync_Request">
+            <summary>
+            OperationType_UpdateAsync_Request返回对象
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_UpdateAsync_Request.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Attributes.UnitOfWorkTransactionAttribute">
+            <summary>
+            工作单元
+            仅用来做特性标记 
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext">
+            <summary>
+            任务调度上下文
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext})">
+            <summary>
+            构造函数
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.MissionPlan">
+            <summary>
+            任务计划
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OperationType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            OnConfiguring
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            OnModelCreating
+            </summary>
+            <param name="modelBuilder"></param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController">
+            <summary>
+            任务计划api接口
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController._missionPlanService">
+            <summary>
+            任务计划服务接口
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController._mapper">
+            <summary>
+            映射器
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.#ctor(MyMicroService.Service.TimingSchedulingService.IService.IMissionPlanService,AutoMapper.IMapper)">
+            <summary>
+            任务计划api接口
+            </summary>
+            <param name="missionPlanService">任务计划服务接口</param>
+            <param name="mapper">映射器</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.GetEntityAsync(System.String)">
+            <summary>
+            获取单个任务计划
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.GetListAsync">
+            <summary>
+            获取所有任务计划
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.GetPageListAsync(System.Int32,System.Int32)">
+            <summary>
+            获取任务计划分页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.InsertAsync(MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_InsertAsync_Request)">
+            <summary>
+            添加任务计划
+            </summary>
+            <param name="missionPlan_InsertAsync_Request">添加任务计划</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.UpdateAsync(MyMicroService.Service.TimingSchedulingService.APIModels.MissionPlan_UpdateAsync_Request)">
+            <summary>
+            修改任务计划
+            </summary>
+            <param name="missionPlan_UpdateAsync_Request">修改任务计划</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.MissionPlanController.UpdateAsync(System.String)">
+            <summary>
+            删除任务计划
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController">
+            <summary>
+            操作类型api接口
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController._operationTypeService">
+            <summary>
+             操作类型服务接口
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController._mapper">
+            <summary>
+            映射器
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.#ctor(MyMicroService.Service.TimingSchedulingService.IService.IOperationTypeService,AutoMapper.IMapper)">
+            <summary>
+             操作类型api接口
+            </summary>
+            <param name="operationTypeService">操作类型服务接口</param>
+            <param name="mapper">映射器</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.GetEntityAsync(System.String)">
+            <summary>
+            获取单个操作类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.GetListAsync">
+            <summary>
+            获取操作类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.GetPageListAsync(System.Int32,System.Int32)">
+            <summary>
+            获取操作类型分页
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.InsertAsync(MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_InsertAsync_Request)">
+            <summary>
+            添加操作类型
+            </summary>
+            <param name="operationType_InsertAsync_Request">添加操作类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.UpdateAsync(MyMicroService.Service.TimingSchedulingService.APIModels.OperationType_UpdateAsync_Request)">
+            <summary>
+            修改操作类型
+            </summary>
+            <param name="operationType_UpdateAsync_Request">修改操作类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Controllers.OperationTypeController.UpdateAsync(System.String)">
+            <summary>
+            删除操作类型
+            </summary>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Enums.EnumMissionPlanState">
+            <summary>
+            调度计划状态枚举
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Enums.EnumMissionPlanState.Start">
+            <summary>
+            已启动
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Enums.EnumMissionPlanState.Close">
+            <summary>
+            已关闭
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Enums.EnumMissionPlanState.Execution">
+            <summary>
+            执行中
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Interceptor.LogInterceptor">
+            <summary>
+            日志拦截器
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Interceptor.LogInterceptor._logFactory">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.LogInterceptor.#ctor(MyMicroService.Infrastruct.ILog.ILogFactory)">
+            <summary>
+            日志拦截器构造
+            </summary>
+            <param name="logFactory">日志</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.LogInterceptor.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            拦截方法
+            </summary>
+            <param name="invocation">被拦截方法的信息</param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor">
+            <summary>
+            工作单元控制器
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor._repositoryOperation">
+            <summary>
+            数据上下文
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor.#ctor(MyMicroService.Infrastruct.IRepository.IRepositoryOperation{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext})">
+            <summary>
+            工作单元控制器构造
+            </summary>
+            <param name="repositoryOperation">数据上下文工厂</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor.Intercept(Castle.DynamicProxy.IInvocation)">
+            <summary>
+            拦截方法
+            </summary>
+            <param name="invocation">被拦截方法的信息</param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.IService.IMissionPlanService">
+            <summary>
+            任务计划服务接口
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.IService.IMissionPlanService.InitializeMissionPlanToQuartz">
+            <summary>
+            初始化任务计划
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.IService.IOperationTypeService">
+            <summary>
+            操作类型接口
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.IService.ITimingSchedulingBaseService`1">
+            <summary>
+            任务调度类接口
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan">
+            <summary>
+            任务计划
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.Name">
+            <summary>
+            计划名称
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.Group">
+            <summary>
+            计划分组
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.Cron">
+            <summary>
+            cron表达式
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.Describe">
+            <summary>
+            计划描述
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.State">
+            <summary>
+            计划状态
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.CreatTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.ModifyTime">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.OperationTypeID">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan.OperationData">
+            <summary>
+            操作数据
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Models.OperationType">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.OperationType.ID">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.OperationType.Name">
+            <summary>
+            操作类型名称
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.OperationType.DataValidationMethod">
+            <summary>
+            数据验证方法
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Models.OperationType.SchedulingExecutionMethod">
+            <summary>
+            调度执行方法
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Program">
+            <summary>
+            Program
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Program.Main(System.String[])">
+            <summary>
+            Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            CreateHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Quartz.JobFactoryImpl">
+            <summary>
+            JobFactoryImpl
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Quartz.JobFactoryImpl._lifetimeScope">
+            <summary>
+            IServiceProvider
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Quartz.JobFactoryImpl.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Quartz.JobFactoryImpl.NewJob(Quartz.Spi.TriggerFiredBundle,Quartz.IScheduler)">
+            <summary>
+            NewJob
+            </summary>
+            <param name="bundle"></param>
+            <param name="scheduler"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Quartz.JobFactoryImpl.ReturnJob(Quartz.IJob)">
+            <summary>
+            ReturnJob
+            </summary>
+            <param name="job"></param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob">
+            <summary>
+            Job的实现类
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob._logFactory">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob._operationTypeService">
+            <summary>
+            操作类型服务
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob._schedulingPlanningHelp">
+            <summary>
+            调度计划帮助类
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob.#ctor(MyMicroService.Infrastruct.ILog.ILogFactory,MyMicroService.Service.TimingSchedulingService.IService.IOperationTypeService,MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp)">
+            <summary>
+            Job的实现构造
+            </summary>
+            <param name="logFactory"></param>
+            <param name="operationTypeService"></param>
+            <param name="schedulingPlanningHelp"></param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Quartz.TimingSchedulingJob.Execute(Quartz.IJobExecutionContext)">
+            <summary>
+            Execute
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl">
+            <summary>
+            任务计划服务实现
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl._schedulerFactory">
+            <summary>
+            Quartz.Net调度工厂
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl._jobFactory">
+            <summary>
+            调度任务工厂
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl._schedulingPlanningHelp">
+            <summary>
+            调度计划帮助类
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.#ctor(Quartz.ISchedulerFactory,Quartz.Spi.IJobFactory,MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp)">
+            <summary>
+            任务计划服务构造
+            </summary>
+            <param name="schedulerFactory">Quartz.Net调度工厂</param>
+            <param name="jobFactory">调度任务工厂</param>
+            <param name="schedulingPlanningHelp">任务计划服务构造</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.InsertAsync(MyMicroService.Service.TimingSchedulingService.Models.MissionPlan)">
+            <summary>
+            添加调度计划
+            </summary>
+            <param name="entity">调度实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.Verification(MyMicroService.Service.TimingSchedulingService.Models.MissionPlan)">
+            <summary>
+            验证
+            </summary>
+            <param name="entity">调度实体</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.UpdateAsync(MyMicroService.Service.TimingSchedulingService.Models.MissionPlan)">
+            <summary>
+            修改任务
+            </summary>
+            <param name="entity">任务实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.DeleteAsync(System.Object[])">
+            <summary>
+            删除任务
+            </summary>
+            <param name="keyValues">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.InitializeMissionPlanToQuartz">
+            <summary>
+            初始化任务计划
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.AddJob(MyMicroService.Service.TimingSchedulingService.Models.MissionPlan)">
+            <summary>
+            添加任务Quartz
+            </summary>
+            <param name="entity">任务实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.MissionPlanServiceImpl.DeleteJob(System.String,System.String)">
+            <summary>
+            删除任务Quartz
+            </summary>
+            <param name="name">任务名称</param>
+            <param name="group">任务分组</param>
+            <returns></returns>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.OperationTypeServiceImpl">
+            <summary>
+            操作类型基类实现
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp">
+            <summary>
+            调度计划帮助类
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp._httpWebHelper">
+            <summary>
+            http请求帮助接口
+            </summary>
+        </member>
+        <member name="F:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp._logFactory">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.#ctor(MyMicroService.Infrastruct.HttpWeb.IHttpWebHelper,MyMicroService.Infrastruct.ILog.ILogFactory)">
+            <summary>
+            调度计划帮助构造
+            </summary>
+            <param name="httpWebHelper">http请求帮助接口</param>
+            <param name="logFactory">日志</param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.HttpGetModel">
+            <summary>
+            HttpGet方式模型
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.HttpGetModel.URL">
+            <summary>
+            请求URL
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.ValidationHttpGet(System.String)">
+            <summary>
+            验证HttpGet方式
+            </summary>
+            <param name="operationData">操作数据josn</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.ExecutionHttpGet(System.String)">
+            <summary>
+            执行HttpGet方式
+            </summary>
+            <param name="operationData">操作数据josn</param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.HttpPostModel">
+            <summary>
+            HttpGet方式模型
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.HttpPostModel.URL">
+            <summary>
+            请求URL
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.HttpPostModel.Data">
+            <summary>
+            请求数据
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.ValidationHttpPost(System.String)">
+            <summary>
+            验证HttpPost方式
+            </summary>
+            <param name="operationData">操作数据josn</param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.SchedulingPlanningHelp.ExecutionHttpPost(System.String)">
+            <summary>
+            执行HttpPost方式
+            </summary>
+            <param name="operationData">操作数据josn</param>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Service.TimingSchedulingBaseServiceImpl`1">
+            <summary>
+            任务调度基类实现
+            </summary>
+            <typeparam name="TEntity"></typeparam>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Service.TimingSchedulingBaseServiceImpl`1.#ctor">
+            <summary>
+            任务调度基类实现构造
+            </summary>
+        </member>
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Startup.lifetimeScope">
+            <summary>
+            容器服务
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            Autofac注册
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
