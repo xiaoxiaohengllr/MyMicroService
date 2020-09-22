@@ -9,12 +9,12 @@ services:
             - '80:80'
             - '443:443'
         environment:
-            - ASPNETCORE_ENVIRONMENT=Production
-            - ASPNETCORE_URLS=https://+443;http://+80
+            - ASPNETCORE_ENVIRONMENT=Development
+            - ASPNETCORE_URLS=https://+:443;http://+:80
             - ASPNETCORE_Kestrel__Certificates__Default__Password=w8l1520082m49
-            - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/www.xiaoxiaoheng.cn.pfx  
+            - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/www.xiaoxiaoheng.cn.pfx
         volumes:
-            - /https:/https:ro
+            - ~/https:/https:ro
     
     microservice.service.timingschedulingservice:
         container_name:  microservice.service.timingschedulingservice
