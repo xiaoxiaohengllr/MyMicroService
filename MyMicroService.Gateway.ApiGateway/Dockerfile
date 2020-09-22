@@ -7,7 +7,6 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["MyMicroService.Gateway.ApiGateway/www.xiaoxiaoheng.cn.pfx", "MyMicroService.Gateway.ApiGateway/"]
 COPY ["Nuget.config", "MyMicroService.Gateway.ApiGateway/"]
 COPY ["MyMicroService.Gateway.ApiGateway/MyMicroService.Gateway.ApiGateway.csproj", "MyMicroService.Gateway.ApiGateway/"]
 RUN dotnet restore "MyMicroService.Gateway.ApiGateway/MyMicroService.Gateway.ApiGateway.csproj" --configfile "MyMicroService.Gateway.ApiGateway/Nuget.config"
