@@ -10,7 +10,7 @@ namespace MyMicroService.Service.TimingSchedulingService.Service
     /// 任务调度基类实现
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public class TimingSchedulingBaseServiceImpl<TEntity> : BaseServiceImpl<TEntity, TimingSchedulingServiceContext>, ITimingSchedulingBaseService<TEntity>
+    public class TimingSchedulingBaseServiceImpl<TEntity> : BaseServiceImpl<TEntity, TimingSchedulingContext>, ITimingSchedulingBaseService<TEntity>
          where TEntity : class
     {
         /// <summary>
@@ -18,7 +18,7 @@ namespace MyMicroService.Service.TimingSchedulingService.Service
         /// </summary>
         public TimingSchedulingBaseServiceImpl()
         {
-            base.ServiceContext = Startup.lifetimeScope.Resolve(typeof(IRepositoryOperation<TimingSchedulingServiceContext>)) as IRepositoryOperation<TimingSchedulingServiceContext>;
+            base.ServiceContext = Startup.lifetimeScope.Resolve(typeof(IRepositoryOperation<TimingSchedulingContext>)) as IRepositoryOperation<TimingSchedulingContext>;
         }
     }
 }

@@ -7,12 +7,12 @@ namespace MyMicroService.Service.TimingSchedulingService.Context
     /// <summary>
     /// 任务调度上下文
     /// </summary>
-    public partial class TimingSchedulingServiceContext : BaseDbContext<TimingSchedulingServiceContext>
+    public partial class TimingSchedulingContext : BaseDbContext<TimingSchedulingContext>
     {
         /// <summary>
         /// 构造函数
         /// </summary>
-        public TimingSchedulingServiceContext()
+        public TimingSchedulingContext()
         {
         }
 
@@ -20,7 +20,7 @@ namespace MyMicroService.Service.TimingSchedulingService.Context
         /// 构造函数
         /// </summary>
         /// <param name="options"></param>
-        public TimingSchedulingServiceContext(DbContextOptions<TimingSchedulingServiceContext> options)
+        public TimingSchedulingContext(DbContextOptions<TimingSchedulingContext> options)
             : base(options)
         {
         }

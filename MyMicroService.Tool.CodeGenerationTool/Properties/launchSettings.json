@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MyMicroService.Tool.CodeGenerationTool": {
+      "commandName": "Project",
+      "commandLineArgs": "Server=106.55.163.216;port=3306;Database=mysql;Uid=root;Pwd=xiaoheng123.;CharSet=utf8;AllowUserVariables=True;sslMode=None;  TimingScheduling"
+    }
+  }
+}

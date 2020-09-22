@@ -17,13 +17,13 @@ namespace MyMicroService.Service.TimingSchedulingService.Interceptor
         /// <summary>
         /// 数据上下文
         /// </summary>
-        private readonly IRepositoryOperation<TimingSchedulingServiceContext> _repositoryOperation;
+        private readonly IRepositoryOperation<TimingSchedulingContext> _repositoryOperation;
 
         /// <summary>
         /// 工作单元控制器构造
         /// </summary>
         /// <param name="repositoryOperation">数据上下文工厂</param>
-        public UnitOfWorkIInterceptor(IRepositoryOperation<TimingSchedulingServiceContext> repositoryOperation)
+        public UnitOfWorkIInterceptor(IRepositoryOperation<TimingSchedulingContext> repositoryOperation)
         {
             this._repositoryOperation = repositoryOperation;
         }
