@@ -2,7 +2,7 @@
   "GlobalConfiguration": {
     // 网关全局配置	
     "BaseUrl": null, ///网关对外地址
-    "DownstreamScheme": "https", // 协议	
+    "DownstreamScheme": "http", // 协议	
     "LoadBalancerOptions": { // 负载均衡的算法（这里使用最小连接数）	
       "Type": "LeastConnection"
     },
@@ -19,7 +19,6 @@
     {
       "UpstreamPathTemplate": "/TimingSchedulingService/api/{url}",
       "DownstreamPathTemplate": "/api/{url}",
-      "DownstreamScheme": "http", // 协议	
       "ServiceName": "TimingSchedulingService",
       "RateLimitOptions": {
         "ClientWhitelist": [ "127.0.0.1" ], //白名单
@@ -37,7 +36,6 @@
     {
       "UpstreamPathTemplate": "/WeChatAppletService/api/{url}",
       "DownstreamPathTemplate": "/api/{url}",
-      "DownstreamScheme": "http", // 协议	
       "ServiceName": "WeChatAppletService",
       "RateLimitOptions": {
         "ClientWhitelist": [ "127.0.0.1" ], //白名单
