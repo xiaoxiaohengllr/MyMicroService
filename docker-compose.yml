@@ -14,7 +14,7 @@ services:
             - ASPNETCORE_Kestrel__Certificates__Default__Password=w8l1520082m49
             - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/www.xiaoxiaoheng.cn.pfx  
         volumes:
-            - /https:/https/
+            - ~/.aspnet/https:/https
     
     microservice.service.timingschedulingservice:
         container_name:  microservice.service.timingschedulingservice
