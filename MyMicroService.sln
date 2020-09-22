@@ -47,11 +47,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMicroService.Infrastruct.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tool", "Tool", "{098F1F99-398D-487B-9906-9BC48B8CE6F9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMicroService.Tool.CodeGenerationTool", "MyMicroService.Tool.CodeGenerationTool\MyMicroService.Tool.CodeGenerationTool.csproj", "{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMicroService.Infrastruct.ILog", "MyMicroService.Infrastruct.ILog\MyMicroService.Infrastruct.ILog.csproj", "{522B0FD5-10CD-47AF-BCD5-742E29C90C94}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMicroService.Infrastruct.ILog", "MyMicroService.Infrastruct.ILog\MyMicroService.Infrastruct.ILog.csproj", "{522B0FD5-10CD-47AF-BCD5-742E29C90C94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMicroService.Infrastruct.Log", "MyMicroService.Infrastruct.Log\MyMicroService.Infrastruct.Log.csproj", "{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMicroService.Infrastruct.Log", "MyMicroService.Infrastruct.Log\MyMicroService.Infrastruct.Log.csproj", "{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMicroService.Tool.CodeGenerationTool", "MyMicroService.Tool.CodeGenerationTool\MyMicroService.Tool.CodeGenerationTool.csproj", "{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,10 +103,6 @@ Global
 		{CBD65DD0-D7E1-4DCF-924C-2997FB86330E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBD65DD0-D7E1-4DCF-924C-2997FB86330E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBD65DD0-D7E1-4DCF-924C-2997FB86330E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{522B0FD5-10CD-47AF-BCD5-742E29C90C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{522B0FD5-10CD-47AF-BCD5-742E29C90C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{522B0FD5-10CD-47AF-BCD5-742E29C90C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -115,6 +111,10 @@ Global
 		{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,9 +138,9 @@ Global
 		{30691B60-DF32-49FC-A6F4-6CF4D3F64B70} = {C7B97DA4-81AE-40B9-A228-0B2EB02C3483}
 		{E186C125-16CF-4C4C-8D09-034D71268B85} = {90D1206D-01C9-4039-8339-10C5D0873AB0}
 		{CBD65DD0-D7E1-4DCF-924C-2997FB86330E} = {E186C125-16CF-4C4C-8D09-034D71268B85}
-		{4C9AB50A-688C-423A-9C5E-C2FA1195C4AD} = {098F1F99-398D-487B-9906-9BC48B8CE6F9}
 		{522B0FD5-10CD-47AF-BCD5-742E29C90C94} = {A4A05B89-0530-4AD4-85BF-FB07A8519F62}
 		{87F2BB9E-1756-43C2-8A85-9F48CB4EE7BE} = {A4A05B89-0530-4AD4-85BF-FB07A8519F62}
+		{E9A801BB-0AF1-4D6A-B437-70E2B331CEC5} = {098F1F99-398D-487B-9906-9BC48B8CE6F9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {165C40EC-2AE1-4AF9-BF33-8E5576B339C7}
