@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyMicroService.Infrastruct.BaseService;
 using MyMicroService.Infrastruct.Consul;
 using MyMicroService.Infrastruct.Filters;
 using MyMicroService.Infrastruct.Log;
@@ -35,8 +36,10 @@ namespace MyMicroService.Service.WeChatAppletService
         {
             services.AddControllers(options =>
             {
-                options.Filters.Add<GlobalExceptionFilter>();
+                //options.Filters.Add<GlobalExceptionFilter>();
             }).AddControllersAsServices();
+
+            services.AddBaseService(this.GetType());//服务基类
 
             services.AddLog();//添加日志
 
