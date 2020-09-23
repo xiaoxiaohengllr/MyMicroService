@@ -55,7 +55,7 @@ namespace MyMicroService.Tool.CodeGenerationTool
                             /// <summary>
                             /// {entryName}基类接口
                             /// </summary>
-                            public interface I{entryName}BaseService<TEntity> : IBaseService<TEntity, {entryName}ServiceContext>
+                            public interface I{entryName}BaseService<TEntity> : IBaseService<TEntity, {entryName}Context>
                                 where TEntity : class
                             {{
                             }}
