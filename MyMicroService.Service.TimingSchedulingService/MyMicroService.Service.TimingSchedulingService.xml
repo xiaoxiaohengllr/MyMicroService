@@ -120,39 +120,39 @@
             仅用来做特性标记 
             </summary>
         </member>
-        <member name="T:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext">
+        <member name="T:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext">
             <summary>
             任务调度上下文
             </summary>
         </member>
-        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.#ctor">
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.#ctor">
             <summary>
             构造函数
             </summary>
         </member>
-        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext})">
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext})">
             <summary>
             构造函数
             </summary>
             <param name="options"></param>
         </member>
-        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.MissionPlan">
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.MissionPlan">
             <summary>
             任务计划
             </summary>
         </member>
-        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OperationType">
+        <member name="P:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.OperationType">
             <summary>
             操作类型
             </summary>
         </member>
-        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
             <summary>
             OnConfiguring
             </summary>
             <param name="optionsBuilder"></param>
         </member>
-        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <summary>
             OnModelCreating
             </summary>
@@ -332,7 +332,7 @@
             数据上下文
             </summary>
         </member>
-        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor.#ctor(MyMicroService.Infrastruct.IRepository.IRepositoryOperation{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingServiceContext})">
+        <member name="M:MyMicroService.Service.TimingSchedulingService.Interceptor.UnitOfWorkIInterceptor.#ctor(MyMicroService.Infrastruct.IRepository.IRepositoryOperation{MyMicroService.Service.TimingSchedulingService.Context.TimingSchedulingContext})">
             <summary>
             工作单元控制器构造
             </summary>
@@ -362,7 +362,7 @@
         </member>
         <member name="T:MyMicroService.Service.TimingSchedulingService.IService.ITimingSchedulingBaseService`1">
             <summary>
-            任务调度类接口
+            任务调度基类接口
             </summary>
         </member>
         <member name="T:MyMicroService.Service.TimingSchedulingService.Models.MissionPlan">

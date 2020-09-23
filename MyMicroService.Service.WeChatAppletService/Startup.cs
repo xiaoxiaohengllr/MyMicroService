@@ -1,3 +1,6 @@
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Autofac.Extras.DynamicProxy;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -8,12 +11,18 @@ using MyMicroService.Infrastruct.Consul;
 using MyMicroService.Infrastruct.Filters;
 using MyMicroService.Infrastruct.Log;
 using MyMicroService.Infrastruct.Swagger;
+using MyMicroService.Service.WeChatAppletService.Interceptor;
 using System;
 
 namespace MyMicroService.Service.WeChatAppletService
 {
     public class Startup
     {
+        /// <summary>
+        /// 容器服务
+        /// </summary>
+        public static ILifetimeScope lifetimeScope { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -34,6 +43,23 @@ namespace MyMicroService.Service.WeChatAppletService
             services.AddSwagger("MyMicroService.Service.WeChatAppletService", "定时调度服务", "MyMicroService.Service.WeChatAppletService.xml");
         }
 
+        /// <summary>
+        /// Autofac注册
+        /// </summary>
+        /// <param name="builder"></param>
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            builder.RegisterType<LogInterceptor>().InstancePerLifetimeScope();
+            builder.RegisterType<UnitOfWorkIInterceptor>().InstancePerLifetimeScope();
+
+            builder.RegisterAssemblyTypes(this.GetType().Assembly)
+                .Where(t => t.Name.EndsWith("Service") || t.Name.EndsWith("ServiceImpl"))
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .InterceptedBy(new[] { typeof(LogInterceptor), typeof(UnitOfWorkIInterceptor) })
+                .EnableInterfaceInterceptors();
+        }
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -41,6 +67,8 @@ namespace MyMicroService.Service.WeChatAppletService
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            lifetimeScope = app.ApplicationServices.GetAutofacRoot();
 
             app.UseSwagger();
 
