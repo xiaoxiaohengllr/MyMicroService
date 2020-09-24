@@ -27,6 +27,12 @@ namespace MyMicroService.Service.WeChatAppletService.Models
         [Display(Name = "路由", Order = 3)]
         public string Route { get; set; }
 
+        /// <summary>
+        /// 图片路径
+        /// </summary>
+        [Display(Name = "图片路径", Order = 4)]
+        public string ImageUrl { get; set; }
+
     }
 }
 
