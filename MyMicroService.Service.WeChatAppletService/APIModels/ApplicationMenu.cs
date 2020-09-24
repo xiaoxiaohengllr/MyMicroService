@@ -16,6 +16,13 @@ namespace MyMicroService.Service.WeChatAppletService.APIModels
     public class ApplicationMenu_GetListAsync_Response
     {
         /// <summary>
+        /// 
+        /// </summary>
+        [Display(Name = "", Order = 1)]
+        [Key]
+        public string ID { get; set; }
+
+        /// <summary>
         /// 名称
         /// </summary>
         [Display(Name = "名称", Order = 2)]
