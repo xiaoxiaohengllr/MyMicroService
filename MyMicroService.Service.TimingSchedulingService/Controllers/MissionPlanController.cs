@@ -114,7 +114,7 @@ namespace MyMicroService.Service.TimingSchedulingService.Controllers
         /// <param name="id">id</param>
         /// <returns></returns>
         [HttpDelete, ApiVersion("1.0")]
-        public async Task<ResponseMessage> UpdateAsync(string id)
+        public async Task<ResponseMessage> DeleteAsync(string id)
         {
             string msg = await this._missionPlanService.DeleteAsync(id);
             ResponseMessage responseMessage = new ResponseMessage();
